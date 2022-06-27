@@ -1,3 +1,7 @@
+## Prueba tecnica
+
+La prueba tiene interacción con consola, desarrollada en Visual Studio Code, descargue y abra en una aplicación de desarrollo java e interactue con la consola.
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
