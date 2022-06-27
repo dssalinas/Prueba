@@ -1,6 +1,6 @@
-##Prueba tecnica
+## Prueba tecnica
 
-La prueba tiene interacción con consola, desarrollada en Visual Studio Code, descargue y abra una aplicación de desarrollo java e interactue con la consola.
+La prueba tiene interacción con consola, desarrollada en Visual Studio Code, descargue y abra en una aplicación de desarrollo java e interactue con la consola.
 
 ## Getting Started
 
