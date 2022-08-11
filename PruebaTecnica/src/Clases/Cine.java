@@ -1,12 +1,13 @@
 package Clases;
 
-import java.util.ArrayList;
 import java.util.Random;
 
-public class Cine extends Espectador {
+public class Cine {
 
     // Inicializa clase Pelicula
     Pelicula pelicula = new Pelicula();
+    // Posición de las salas
+    private static String[] datosParaSala = { "A", "B", "C", "D", "F", "G", "H", "I", "J" };
 
     // Variable de precio de entrada, sirve para la validación donde no pueden
     // entrar menores de edad
@@ -36,57 +37,8 @@ public class Cine extends Espectador {
 
     }
 
-    // Metodo para generar los 45 espectadores
-    public ArrayList<Espectador> generarEspectador() {
-
-        // Variable que ayuda a generar números aleatorios
-        Random aleatorio = new Random();
-
-        // Lista donde se guardaran los espectadores
-        ArrayList<Espectador> listaEspectadores = new ArrayList<Espectador>();
-
-        // Lista de nombres para generar espectadores
-        String[] nombre = { "Veronica", "Carlos", "Michel", "Eduardo", "Walter", "Gabriela", "Jeferson" };
-
-        // Lista de apellidos para generar espectadores
-        String[] apellido = { "Gonzales", "Avila", "Silva", "Herrera", "Ordoñes", "Gomez", "Lopez" };
-
-        // Ciclo para generar nombres
-        for (int i = 0; i < 45; i++) {
-
-            // Variable para generar el número aleatorio del nombre de la persona en el
-            // vector nombre[]
-            int numeroAleatorio = aleatorio.nextInt(7);
-
-            // Variable para generar el número aleatorio del nombre de la persona en el
-            // vector apellido[]
-            int numeroAleatorioApellido = aleatorio.nextInt(7);
-
-            // Variable para generar que cantidad tiene cada espectador al azar
-            int dinero = aleatorio.nextInt(50000);
-
-            // Variable para generar la edad de los espectadores al azar
-            int edad = aleatorio.nextInt(50);
-
-            // Variable que guardara el nombre y apellido
-            String nombreApellido = nombre[numeroAleatorio] + " " + apellido[numeroAleatorioApellido];
-
-            // Va creando usuarios y guardandolos en la lista
-            Espectador lista = new Espectador(nombreApellido, edad, dinero);
-
-            // Lista donde se guardan los espectadores
-            listaEspectadores.add(lista);
-
-        }
-        return listaEspectadores;
-
-    }
-
     // Metodo para rellenar las salas
     public void rellenarSala() {
-
-        // Posición de las salas
-        String[] datosParaSala = { "A", "B", "C", "D", "F", "G", "H", "I", "J" };
 
         // Número de la posición de la sala
         int numero = 0;
@@ -118,6 +70,7 @@ public class Cine extends Espectador {
         // terminar valida para terminar el ciclo
         // espacio valida que la matriz aun haya espacio
         boolean terminar = true, espacio = true;
+        Random aleatorio = new Random();
 
         // Invoca el metodo hayEspacio para ver en la matriz si hay espacio
         espacio = hayEspacio();
@@ -135,8 +88,6 @@ public class Cine extends Espectador {
                 acceder = "No puede acceder a la sala de cine, no cuenta con el dinero suficiente";
 
             } else {
-
-                Random aleatorio = new Random();
 
                 while (terminar) {
 
