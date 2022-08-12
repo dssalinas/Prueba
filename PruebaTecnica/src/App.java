@@ -1,18 +1,11 @@
 
-import Models.Utilidades;
+import static  Models.Utilidades.actividad;;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
 
-        // PrimeraActividad
-        Utilidades.primeraActividad();
-
-        // Segunda actividad
-        Utilidades.segundaActividad();
-
-        // TerceraActividad
-        Utilidades.terceraActividad();
+       actividad();
 
     }
 

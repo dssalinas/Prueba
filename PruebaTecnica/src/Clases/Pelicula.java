@@ -50,12 +50,6 @@ public class Pelicula {
 
     }
 
-    // Consultar datos de la pelicula
-    public String ConsultarPelicula() {
-        String mostrarPelicula = "Nombre de la pelicula:" + getTitulo() + "\n Duracion: " + getDuracion()
-                + "\n Edad minima de " + getEdadMinima() + "\n Producida por:" + getDirector();
-        return mostrarPelicula;
-
-    }
+   
 
 }

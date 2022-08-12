@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import Clases.Cine;
 import Clases.Espectador;
-import Clases.Liga;
+import Metodos.CineMetodo;
+import Metodos.EspectadorMetodo;
+import Metodos.LigaMetodo;
 
 public class Utilidades {
+
 
     // Lista para acomodar
     private static final String array[] = {
@@ -28,10 +30,18 @@ public class Utilidades {
             "480/80-50",
             "480/80-46"
     };
-    private static Cine cine = new Cine();
-    private static Espectador espectador = new Espectador();
+    private static CineMetodo cine = new CineMetodo();
+    private static EspectadorMetodo espectador = new EspectadorMetodo();
 
-    public static void primeraActividad() {
+
+    public static final void actividad(){
+        primeraActividad();
+        segundaActividad();
+        terceraActividad();
+    }
+
+
+    private static void primeraActividad() {
 
         // limite se encarga de guardar el contador de registros que hay dentro de
         // array[]
@@ -201,7 +211,7 @@ public class Utilidades {
     }
 
     // Segunda actividad
-    public static void segundaActividad() {
+    private static void segundaActividad() {
         // sc se encargara de leer lo que el usuario digite
         Scanner sc = new Scanner(System.in);
 
@@ -223,6 +233,7 @@ public class Utilidades {
 
         try {
             do {
+                cine.rellenar();
 
                 contador = 0;
 
@@ -237,7 +248,7 @@ public class Utilidades {
                             + "\n");
                 }
 
-                System.out.print("Recuerde que la entrada al cine vale $" + cine.getPrecioEntrada() + "\n");
+                System.out.print("Recuerde que la entrada al cine vale $" + cine.precioEntrada() + "\n");
 
                 System.out.print("Seleccione el número de la persona que quiere ingresar a la sala de cine\n");
 
@@ -283,11 +294,14 @@ public class Utilidades {
 
     }
 
-    public static void terceraActividad() {
+    private static void terceraActividad() {
 
-        Liga liga = new Liga();
+
+        LigaMetodo liga = new LigaMetodo();
         Scanner sc = new Scanner(System.in);
+
         try {
+            liga.rellenar();
             System.out.println("Escriba el nombre del país que solicita saber cuantas veces a ganado");
 
             String lectura = sc.nextLine();
@@ -300,6 +314,7 @@ public class Utilidades {
             lectura = sc.nextLine();
 
             liga.ganadorMasRepetido(Integer.parseInt(lectura));
+            liga.ganadorMasRepetido();;
         } catch (Exception e) {
             System.out.println("Error en el procesamiento de los datos :" + e);
         }
